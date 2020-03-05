@@ -299,6 +299,20 @@ aside .container_aside .card_aside {
   background-repeat: no-repeat;
   position: relative;
   background-position: center;
+  z-index: 0;
+}
+
+aside .container_aside .card_aside::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  background: #002633;
+  z-index: -1;
+  border-radius: 20px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -309,15 +323,15 @@ aside .container_aside .card_aside {
 }
 
 aside .container_aside .card_aside:nth-child(2) {
-  background-color: blue;
+  background-color: #002633;
 }
 
 aside .container_aside .card_aside:nth-child(3) {
-  background-color: red;
+  background-color: #002633;
 }
 
 aside .container_aside .card_aside:nth-child(4) {
-  background-color: orange;
+  background-color: #002633;
 }
 
 aside .container_aside .card_aside:not(:first-child) {
@@ -808,8 +822,31 @@ aside .container_aside .card_aside:hover .buttons {
   }
 }
 
+.container1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  margin-left: -10%;
+}
+
+.container1 .rectangle {
+  height: 110%;
+  width: 600px;
+  background: white;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
+  border-radius: 20px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
 .mainpage_text {
   width: 100%;
+  position: relative;
   margin-top: 20px;
 }
 
@@ -1278,15 +1315,6 @@ aside .container_aside .card_aside:hover .buttons {
   line-height: 50px;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .ab-section .about-slider_icons a:nth-child(5) i {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-}
-
 .ab-section .about-slider_icons a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -1314,13 +1342,7 @@ aside .container_aside .card_aside:hover .buttons {
 }
 
 .ab-section .about-slider_icons a i {
-  font-size: 60px;
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .ab-section .about-slider_icons a i {
-    font-size: 50px;
-  }
+  font-size: 50px;
 }
 
 .ab-section .about-slider .swiper-container-horizonatal > .swiper-pagination-bullets,
@@ -1392,7 +1414,14 @@ aside .container_aside .card_aside:hover .buttons {
   background: #fff;
   height: 50vh;
   border-radius: 40px;
-  padding: 20px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1419,6 +1448,54 @@ aside .container_aside .card_aside:hover .buttons {
   .about_description .about-info {
     height: 400px !important;
   }
+}
+
+.about_description .about-info_desc {
+  font-weight: bold;
+  font-size: 36px;
+  color: #004d66;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .about_description .about-info_desc {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .about_description .about-info_desc {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 1501px) and (max-width: 3640px) {
+  .about_description .about-info_desc {
+    font-size: 28px;
+  }
+}
+
+.about_description .about-info_list {
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.about_description .about-info_list ul {
+  list-style-type: none;
+}
+
+.about_description .about-info_list ul li {
+  color: #036c86;
+}
+
+.about_description .about-info_list ul li::before {
+  content: "\2022";
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  font-size: 25px;
 }
 
 .footer_about {
@@ -1463,6 +1540,26 @@ aside .container_aside .card_aside:hover .buttons {
 
 .co-section {
   height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.co-section .contact-form_wrap {
+  border-radius: 55px;
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer_contact {

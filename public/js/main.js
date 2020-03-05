@@ -2,16 +2,26 @@
 let mouseCursor = document.querySelector(".cursor")
 let navList = document.querySelectorAll(".nav_list li a")
 let buttons = document.querySelectorAll(".buttons a")
+let rectangle = document.querySelector(".rectangle")
 let socialIcons = document.querySelectorAll(".footer_social-icons a i")
-let bullets = document.querySelectorAll(".swiper-pagination-bullet")
-// let bullets = document.querySelectorAll(".about-slider_pagination span")
+let jsHover = document.querySelectorAll(".js-hover a")
+
 
 window.addEventListener("mousemove", cursor)
-
 function cursor(e) {
     mouseCursor.style.top = e.pageY + 'px'
     mouseCursor.style.left = e.pageX + 'px'
 }
+
+window.addEventListener("mousemove", ({ x, y }) => {
+    const widthPage = window.innerWidth
+    const heightPage = window.innerHeight
+
+    const traX = (-(widthPage / 2) + x) / 30
+    const traY = ((heightPage / 2) - y) / 30
+
+    rectangle.style.transform = `rotateY(${traX}deg) rotateX(${traY}deg) translateZ(-150px)`
+})
 
 navList.forEach(link => {
     link.addEventListener("mouseleave", _ => {
@@ -38,18 +48,16 @@ socialIcons.forEach(btn => {
     })
 
 });
-// const bullets = bulletss.childNodes[0]
-console.log(bullets);
+jsHover.forEach(btn => {
+    btn.addEventListener("mouseleave", _ => {
+        mouseCursor.classList.remove("link-grow")
+    })
+    btn.addEventListener("mouseover", _ => {
+        mouseCursor.classList.add("link-grow")
+    })
 
-// bullets.forEach(bullet => {
-//     console.log(bullet);
-//     bullet.addEventListener("mouseleave", _ => {
-//         mouseCursor.classList.remove("link-grow")
-//     })
-//     bullet.addEventListener("mouseover", _ => {
-//         mouseCursor.classList.add("link-grow")
-//     })
-// });
+});
+
 
 //About Swiper Js
 const swiper = new Swiper(".about-slider", {
