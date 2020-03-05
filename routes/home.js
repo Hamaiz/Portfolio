@@ -4,7 +4,8 @@ router.get("/", (req, res) => {
     res.render("home/index", {
         title: "Home",
         textColor: "header_color_1",
-        mainStyle: "main_one"
+        mainStyle: "main_one",
+        pageName: "home"
     })
 })
 

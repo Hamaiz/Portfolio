@@ -4,9 +4,23 @@
     </div>
     <div class="header_nav">
         <ul class="nav_list">
+            <% if (pageName  === "home") { %>
+
             <li><a href="/" class="active">Home</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+            <% }else if(pageName === "about"){ %>
+
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+            <% }else{ %>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact" class="active">Contact</a></li>
+            <% } %>
         </ul>
     </div>
 </header>

@@ -10,6 +10,7 @@ const expressLayouts = require("express-ejs-layouts")
 //Routes Imports
 const homeRouter = require("./routes/home")
 const aboutRouter = require("./routes/about")
+const contactRouter = require("./routes/contact")
 
 //Middlewares
 app.set("view engine", "ejs")
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }))
 //Routes Middlewares
 app.use("/", homeRouter)
 app.use("/about", aboutRouter)
+app.use("/contact", contactRouter)
 
 
 app.listen(process.env.PORT || 4000, () => console.log("Server has started...."))

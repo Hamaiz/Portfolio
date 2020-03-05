@@ -1,11 +1,11 @@
 const router = require("express").Router()
 
 router.get("/", (req, res) => {
-    res.render("about/index", {
-        title: "About",
+    res.render("contact/index", {
+        title: "Contact",
         textColor: "header_color_2",
-        mainStyle: "main_two",
-        pageName: "about"
+        mainStyle: "main_three",
+        pageName: "contact"
     })
 })
 
