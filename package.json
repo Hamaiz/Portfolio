@@ -11,7 +11,7 @@
   "author": "ThanksDear",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.5.3",
+    "@sendgrid/mail": "^6.5.4",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
