@@ -23,7 +23,10 @@ let inputBox = document.querySelector("#name")
 let inputBox2 = document.querySelector("#email")
 let textBox = document.querySelector("textarea")
 let buttonContact = document.querySelector("button")
-// let isMobile = window.matchMedia("only screen and (max-width: 991px)")
+let isMobile = window.matchMedia("only screen and (min-width: 991px)").matches
+
+console.log(isMobile);
+
 
 // if (isMobile.matches === false) {
 window.addEventListener("mousemove", cursor)
@@ -43,7 +46,7 @@ if (rectangle) {
         rectangle.style.transform = `rotateY(${traX}deg) rotateX(${traY}deg) translateZ(-150px)`
     })
 }
-if (contactInfo) {
+if (contactInfo && isMobile === true) {
     window.addEventListener("mousemove", ({ x, y }) => {
         const widthPage = window.innerWidth
         const heightPage = window.innerHeight
