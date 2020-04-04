@@ -13,10 +13,9 @@ router.get("/", (req, res) => {
 })
 router.post("/", (req, res) => {
     const { name, email, message } = req.body
-    let emailSend = process.env.GM_EMAIL
 
     const msg = {
-        to: emailSend,
+        to: process.env.GM_EMAIL,
         from: `Portfolio <workingeveryday2@gmail>`,
         subject: "Contact Portfolio",
         html: `
