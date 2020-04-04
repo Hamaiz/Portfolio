@@ -64,17 +64,6 @@ router.post("/", (req, res) => {
         console.log('error', error);
     });
 
-
-    // (async () => {
-    // try {
-    // await sgMail.send(msg);
-    // res.redirect("/contact")
-    // } catch (err) {
-    // console.error(err.toString());
-    // }
-    // })();
-
-    // res.redirect("contact")
 })
 
 module.exports = router

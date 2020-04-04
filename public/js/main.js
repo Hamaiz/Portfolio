@@ -1,3 +1,11 @@
+
+window.addEventListener("load", _ => {
+    setTimeout(function () {
+
+        const preLoader = document.querySelector(".preloader")
+        preLoader.classList.add("loaded")
+    }, 1000)
+})
 //Navbar
 let body = document.querySelector(".page")
 const menuToggle = document.querySelector(".menu_toggle")
