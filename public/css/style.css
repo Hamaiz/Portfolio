@@ -27,6 +27,10 @@
   visibility: hidden;
 }
 
+.preloader.loaded > * {
+  visibility: hidden;
+}
+
 .preloader.loaded:before, .preloader.loaded:after {
   height: 0%;
 }
