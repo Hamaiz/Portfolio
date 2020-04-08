@@ -604,6 +604,10 @@ header .header_text {
   background: url(/img/home/a.png);
 }
 
+.background_message {
+  background: url(/img/home/b.png);
+}
+
 @media (max-width: 991px) {
   .fp-section {
     height: 90vh;
@@ -667,7 +671,7 @@ header .header_text {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.5;
     background: #002633;
     z-index: -1;
     border-radius: 20px;
@@ -808,7 +812,7 @@ header .header_text {
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.4;
+    opacity: 0.5;
     background: #002633;
     z-index: -1;
     border-radius: 20px;
