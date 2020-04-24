@@ -99,16 +99,23 @@ router.post("/", [
             }
         });
 
-        transporter.sendMail({
+        let mailOption = {
             from: `"Portfolio" <${process.env.GM_EMAIL}>`,
             to: process.env.GM_EMAIL,
             subject: "Portfolio Contact",
             html: output
+        }
+        transporter.sendMail(mailOption, (error, info) => {
+            if (error) {
+                console.log(error)
+                req.flash("error_msg", "There was a problem while sending email")
+                res.redirect("/contact")
+            } else {
+                req.flash("success_msg", "Your message has been sent. I'll contact you shortly")
+                res.redirect("/contact")
+            }
         })
 
-
-        req.flash("success_msg", "Your message has been send. I'll contact you shortly")
-        res.redirect("/contact")
 
         //     const msg = {
         //         to: process.env.GM_EMAIL,

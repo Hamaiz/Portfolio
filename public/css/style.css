@@ -2228,6 +2228,10 @@ header .header_text {
   }
 }
 
+.ab-section .about-slider_icons {
+  margin-top: 20px;
+}
+
 .ab-section .about-slider_icons a {
   display: inline-block;
   text-decoration: none;
@@ -2315,7 +2319,7 @@ header .header_text {
 }
 
 .ab-section .about-slider_icons a:hover:nth-child(2) i {
-  color: #3b5999;
+  color: #55acee;
 }
 
 .ab-section .about-slider_icons a:hover:nth-child(4) i {
