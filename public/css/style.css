@@ -2210,6 +2210,12 @@ header .header_text {
   color: #00394d;
 }
 
+@media (max-width: 991px) {
+  .ab-section .about-slider_code {
+    width: 100px;
+  }
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .ab-section .about-slider_code {
     font-size: 15px;
