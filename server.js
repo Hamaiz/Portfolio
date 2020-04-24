@@ -38,8 +38,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: {
-        // maxAge: 6000000,
-        secure: true,
+        maxAge: 6000000,
+        // secure: true,
     }
 }))
 
