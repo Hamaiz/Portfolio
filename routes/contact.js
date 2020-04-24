@@ -90,7 +90,9 @@ router.post("/", [
         `
 
         let transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
             auth: {
                 user: process.env.GM_EMAIL,
                 pass: process.env.GM_PASSWORD
@@ -103,9 +105,6 @@ router.post("/", [
             subject: "Portfolio Contact",
             html: output
         })
-
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
 
         req.flash("success_msg", "Your message has been send. I'll contact you shortly")
