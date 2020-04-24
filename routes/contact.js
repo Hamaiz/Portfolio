@@ -4,6 +4,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { check, validationResult } = require("express-validator")
 const nodemailer = require("nodemailer")
 
+
 //GET
 router.get("/", (req, res) => {
     const name = ""
@@ -115,6 +116,7 @@ router.post("/", [
                 res.redirect("/contact")
             }
         })
+
 
 
         //     const msg = {
