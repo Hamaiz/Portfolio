@@ -104,6 +104,10 @@ router.post("/", [
             html: output
         })
 
+        console.log("Message sent: %s", info.messageId);
+        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+
         req.flash("success_msg", "Your message has been send. I'll contact you shortly")
         res.redirect("/contact")
 
