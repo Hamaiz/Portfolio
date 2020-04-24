@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 
 // Imports
+const sslRedirect = require('heroku-ssl-redirect')
 const express = require("express")
 const app = express()
 const expressLayouts = require("express-ejs-layouts")
@@ -30,6 +31,7 @@ nm_dependencies.forEach(dep => {
 })
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(sslRedirect())
 app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -40,15 +42,6 @@ app.use(session({
         secure: true,
     }
 }))
-// if (process.env.NODE_ENV === "production") {
-// app.use((req, res, next) => {
-//     if (req.secure) {
-//         next()
-//     } else {
-//         res.redirect('https://' + req.headers.host + req.url)
-//     }
-// })
-// }
 
 //Global var
 app.use((req, res, next) => {

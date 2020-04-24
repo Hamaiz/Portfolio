@@ -23,6 +23,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.4.0",
     "gsap": "^3.2.6",
+    "heroku-ssl-redirect": "0.0.4",
     "nodemailer": "^6.4.6",
     "swiper": "^5.3.7"
   },
