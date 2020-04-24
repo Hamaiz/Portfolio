@@ -6,6 +6,8 @@ window.addEventListener("load", _ => {
         preLoader.classList.add("loaded")
     }, 1000)
 })
+
+
 //Navbar
 let body = document.querySelector(".page")
 const menuToggle = document.querySelector(".menu_toggle")
@@ -33,7 +35,6 @@ let textBox = document.querySelector("textarea")
 let buttonContact = document.querySelector("button")
 let isMobile = window.matchMedia("only screen and (min-width: 991px)").matches
 
-console.log(isMobile);
 
 
 // if (isMobile.matches === false) {
@@ -108,7 +109,7 @@ const swiper = new Swiper(".about-slider", {
     loop: true,
     noSwiping: false,
     autoplay: {
-        delay: 3000,
+        delay: 5000,
         disableOnInteraction: true
     },
     mousewheel: true,
@@ -146,23 +147,5 @@ if (inputBox) {
         mouseCursor.classList.add("link-grow")
     })
 }
-//Navbar
-// const page = document.querySelector("#body")
-// const menuToggle = document.querySelector(".menu_toggle")
-// const content = document.querySelector(".main")
-
-// menuToggle.addEventListener("click", () => {
-//     page.classList.toggle("shazam")
-// })
-// content.addEventListener("click", () => {
-//     page.classList.remove('shazam')
-// })
-
-//Mobile Issue
-// const mobileHelp = document.getElementById("mobile_help")
-// var disp = mobileHelp.style.display
-// if (disp === "none" || disp === "") {
-// console.log("This")
-// }
 
 
