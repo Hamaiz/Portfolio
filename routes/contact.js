@@ -130,6 +130,7 @@ router.post("/", [
             .send(msg)
             .then((response) => {
                 console.log(response.body);
+                console.log(response);
 
                 req.flash("success_msg", "Your message has been send. I'll contact you shortly")
                 res.redirect('/contact');
