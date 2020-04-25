@@ -91,7 +91,7 @@ router.post("/", [
         `
 
         const msg = {
-            to: "test-twnvm1o7q@srv1.mail-tester.com",
+            to: process.env.GM_EMAIL,
             from: `Portfolio <${process.env.GM_EMAIL}>`,
             subject: "Contact Portfolio",
             html: output
