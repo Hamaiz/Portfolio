@@ -3,6 +3,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { check, validationResult } = require("express-validator")
 const nodemailer = require("nodemailer")
+// const nodemailerSendgrid = require("nodemailer-sendgrid")
 
 
 //GET
@@ -90,9 +91,38 @@ router.post("/", [
         </table>
         `
 
+        // let transporter = nodemailer.createTransport({
+        //     host: "smtp.sendgrid.net",
+        //     port: 587,
+        //     authent,
+
+        //     auth: {
+        //         user: process.env.GM_EMAIL,
+        //         pass: process.env.GM_PASSWORD
+        //     }
+        // });
+
+        // let mailOption = {
+        //     from: `"Portfolio" <${process.env.GM_EMAIL}>`,
+        //     to: process.env.GM_EMAIL,
+        //     subject: "Portfolio Contact",
+        //     html: output
+        // }
+        // transporter.sendMail(mailOption, (error, info) => {
+        //     if (error) {
+        //         console.log(error)
+        //         req.flash("error_msg", "There was a problem while sending email")
+        //         res.redirect("/contact")
+        //     } else {
+        //         req.flash("success_msg", "Your message has been sent. I'll contact you shortly")
+        //         res.redirect("/contact")
+        //     }
+        // })
+
+
         const msg = {
             to: process.env.GM_EMAIL,
-            from: `Portfolio <${process.env.GM_EMAIL}>`,
+            from: `Portfolio <${process.env.GM_SEND_MAIL}>`,
             subject: "Contact Portfolio",
             html: output
         }
@@ -101,7 +131,6 @@ router.post("/", [
             .then(() => {
                 req.flash("success_msg", "Your message has been send. I'll contact you shortly")
                 res.redirect('/contact');
-                console.log(req.flash())
             }, error => {
                 console.log(error)
                 if (error.response) {
