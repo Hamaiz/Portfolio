@@ -2,8 +2,6 @@ const router = require("express").Router()
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const { check, validationResult } = require("express-validator")
-const nodemailer = require("nodemailer")
-// const nodemailerSendgrid = require("nodemailer-sendgrid")
 
 
 //GET
@@ -128,10 +126,7 @@ router.post("/", [
         }
         sgMail
             .send(msg)
-            .then((response) => {
-                console.log(response.body);
-                console.log(response);
-
+            .then(() => {
                 req.flash("success_msg", "Your message has been send. I'll contact you shortly")
                 res.redirect('/contact');
             }, error => {
