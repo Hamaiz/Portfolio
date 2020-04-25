@@ -128,7 +128,9 @@ router.post("/", [
         }
         sgMail
             .send(msg)
-            .then(() => {
+            .then((response) => {
+                console.log(response.body);
+
                 req.flash("success_msg", "Your message has been send. I'll contact you shortly")
                 res.redirect('/contact');
             }, error => {
