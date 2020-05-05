@@ -1953,7 +1953,7 @@ header .header_text {
   width: 90%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  height: 250px;
+  height: 300px;
   border-radius: 20px;
   overflow: hidden;
   position: absolute;
@@ -1973,6 +1973,7 @@ header .header_text {
   .ab-section .about-slider_img {
     height: 250px;
     top: -100px;
+    display: block !important;
   }
 }
 
@@ -1987,6 +1988,12 @@ header .header_text {
   opacity: 0.8;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(88.54%, #036c86));
   background: linear-gradient(180deg, #ffffff 0%, #036c86 88.54%);
+}
+
+@media (max-height: 700px) {
+  .ab-section .about-slider_img {
+    display: none;
+  }
 }
 
 .ab-section .about-slider_wrap {
@@ -2103,7 +2110,7 @@ header .header_text {
   position: absolute;
   top: 150px;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 30px;
 }
 
 .ab-section .about-slider_content > * {
@@ -2156,7 +2163,7 @@ header .header_text {
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
   .ab-section .about-slider_name {
-    font-size: 40px;
+    font-size: 45px;
   }
 }
 
@@ -2737,6 +2744,18 @@ header .header_text {
   resize: none;
   padding: 10px;
   color: #58387a;
+}
+
+@media (max-width: 767px) {
+  .co-section .contact-form_message textarea {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .co-section .contact-form_message textarea {
+    height: 35vh;
+  }
 }
 
 .co-section .contact-form_message textarea::-webkit-input-placeholder {
