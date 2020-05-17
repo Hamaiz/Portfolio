@@ -1,7 +1,6 @@
 
 window.addEventListener("load", _ => {
     setTimeout(function () {
-
         const preLoader = document.querySelector(".preloader")
         preLoader.classList.add("loaded")
     }, 1000)
