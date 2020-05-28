@@ -1077,6 +1077,10 @@ header .header_text {
   background: url(/img/home/b.png);
 }
 
+.background_html {
+  background: url(/img/home/c.png);
+}
+
 @media (max-width: 991px) {
   .fp-section {
     height: 90vh;
