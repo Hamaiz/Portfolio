@@ -1159,7 +1159,7 @@ header .header_text {
     font-weight: bold;
     font-size: 36px;
     line-height: 47px;
-    text-shadow: 1px 1px #000;
+    text-shadow: 2px 2px #000;
   }
 }
 
@@ -1313,12 +1313,13 @@ header .header_text {
     margin-left: -50px;
   }
   aside .container_aside .card_aside .title {
-    color: #fff;
+    color: #eaeaea;
     position: absolute;
     left: 20px;
     top: 15px;
     -webkit-transition: 0.4s ease-out;
     transition: 0.4s ease-out;
+    text-shadow: 2px 2px #000;
   }
   aside .container_aside .card_aside .title::before {
     -webkit-transition-delay: 2s;
