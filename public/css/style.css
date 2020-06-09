@@ -932,7 +932,7 @@ header .header_text {
   }
   header .header_nav ul li {
     display: inline-block;
-    margin-right: 25px;
+    margin-left: 20px;
   }
   header .header_nav ul li:last-child {
     margin-right: 0px;
@@ -941,7 +941,7 @@ header .header_text {
 
 @media only screen and (min-width: 992px) and (min-width: 992px) and (max-width: 1200px) {
   header .header_nav ul li {
-    margin-right: 25px;
+    margin-left: 25px;
   }
 }
 
@@ -960,7 +960,7 @@ header .header_text {
     content: "";
     background: #002633;
     width: 100%;
-    height: 2px;
+    height: 3px;
     bottom: -7px;
     left: 0;
     opacity: 1;
@@ -973,13 +973,13 @@ header .header_text {
 
 @media only screen and (min-width: 992px) and (min-width: 992px) and (max-width: 1200px) {
   header .header_nav ul li a {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media only screen and (min-width: 992px) and (min-width: 1200px) and (max-width: 1440px) {
   header .header_nav ul li a {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
@@ -988,6 +988,7 @@ header .header_text {
     opacity: 1;
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
+    height: 3px;
   }
   header .header_nav ul li a:hover {
     color: #002633;

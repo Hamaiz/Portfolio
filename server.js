@@ -9,6 +9,7 @@ const express = require("express")
 const app = express()
 const expressLayouts = require("express-ejs-layouts")
 const path = require("path")
+const fs = require("fs")
 const flash = require("express-flash")
 var session = require('express-session')
 
@@ -57,6 +58,10 @@ app.use((req, res, next) => {
 app.use("/", homeRouter)
 app.use("/about", aboutRouter)
 app.use("/contact", contactRouter)
-
+app.get("/resume", (req, res) => {
+    const data = fs.readFileSync('./public/ThanksDearResume.pdf')
+    res.contentType("application/pdf");
+    res.send(data)
+})
 
 app.listen(process.env.PORT || 4000, () => console.log("Server has started...."))
