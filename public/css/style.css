@@ -2021,7 +2021,6 @@ header .header_text {
   .ab-section .about-slider {
     height: 400px !important;
     width: 80%;
-    margin-top: 30px;
   }
 }
 
@@ -2503,7 +2502,6 @@ header .header_text {
 
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
   .about_description .about-info {
-    margin-top: 5%;
     height: 400px !important;
   }
 }
@@ -2511,7 +2509,6 @@ header .header_text {
 @media only screen and (min-width: 1501px) and (max-width: 3640px) {
   .about_description .about-info {
     height: 400px !important;
-    margin-top: 15%;
   }
 }
 
