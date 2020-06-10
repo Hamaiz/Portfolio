@@ -1973,9 +1973,9 @@ header .header_text {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   z-index: 999;
 }
 
@@ -1993,10 +1993,8 @@ header .header_text {
   position: relative;
   background-color: #fff;
   max-width: 80%;
-  height: 50vh;
-  margin: 50px auto;
+  height: 500px;
   padding: 25px;
-  margin-top: 70px;
   border-radius: 25px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -2005,6 +2003,7 @@ header .header_text {
 @media (max-width: 991px) {
   .ab-section .about-slider {
     top: 150px;
+    margin: auto;
     margin-bottom: 100px;
     height: 400px;
     width: 300px;
@@ -2163,18 +2162,6 @@ header .header_text {
           transform: translateY(25px);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-  .ab-section .about-slider_content {
-    top: 80px;
-  }
-}
-
-@media only screen and (min-width: 1200px) and (max-width: 1440px) {
-  .ab-section .about-slider_content {
-    top: 130px;
-  }
 }
 
 @media (max-width: 991px) {
@@ -2490,7 +2477,7 @@ header .header_text {
 .about_description .about-info {
   width: 100%;
   background: #fff;
-  height: 50vh;
+  height: 500px;
   border-radius: 40px;
   padding: 30px;
   display: -webkit-box;
@@ -2800,7 +2787,7 @@ header .header_text {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .co-section .contact-form_message textarea {
-    height: 35vh;
+    height: 15vh;
   }
 }
 
