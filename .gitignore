@@ -1,3 +1,4 @@
 node_modules
 public/scss
+package-lock.json
 .env
