@@ -1338,7 +1338,7 @@ header .header_text {
 @media (min-width: 992px) {
   aside .container_aside .card_aside .disc {
     position: absolute;
-    top: 120px;
+    top: 150px;
     left: 20px;
     right: 20px;
     text-align: center;
@@ -1346,6 +1346,8 @@ header .header_text {
     text-shadow: 2px 2px #000;
     font-size: 20px;
     opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s ;
   }
   aside .container_aside .card_aside .buttons {
     opacity: 0;
@@ -1408,8 +1410,8 @@ header .header_text {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    -webkit-transition: 0.4s ease-out;
-    transition: 0.4s ease-out;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
     font-weight: bold;
     font-size: 36px;
     line-height: 47px;
@@ -1457,8 +1459,8 @@ header .header_text {
     color: #fff;
     display: block;
     opacity: 1;
-    -webkit-animation: name_and_job 1500ms linear both;
-            animation: name_and_job 1500ms linear both;
+    /* -webkit-animation: name_and_job 1500ms linear both; */
+            /* animation: name_and_job 1500ms linear both; */
     text-shadow: 2px 2px #000;
     font-size: 20px;
   }
