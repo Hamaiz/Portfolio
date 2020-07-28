@@ -2662,20 +2662,17 @@ header .header_text {
   }
 }
 
+/* WRAP */
 .co-section .contact-form_wrap {
-  margin-top: 20%;
-  border-radius: 55px;
+  margin-top: 10%;
+  border-radius: 20px;
   background: #fff;
   width: 100%;
-  padding: 5%;
-  height: 50vh;
-  padding-top: 50px;
-  position: relative;
+  padding: 25px;
 }
 
 @media (max-width: 991px) {
   .co-section .contact-form_wrap {
-    height: 500px;
     border-radius: 10px;
     margin-bottom: 30px;
   }
@@ -2684,17 +2681,14 @@ header .header_text {
 .co-section .contact-form_wrap button {
   margin: 0 auto;
   background: #58387a;
-  border-radius: 15px;
+  border-radius: 10px;
   width: 40%;
   border: 0;
   color: #fff;
   height: 50px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  margin-top: 30px;
   cursor: none;
-  position: absolute;
-  bottom: 10px;
 }
 
 .co-section .contact-form_wrap button:hover {
@@ -2704,12 +2698,19 @@ header .header_text {
 .co-section .contact-form input {
   margin-right: 10%;
   margin-left: 10%;
-  border: 0;
-  border-bottom: 3px solid #58387a;
+  border: 3px solid #58387a;
   background: transparent;
   width: 80%;
+  border-radius: 5px;
   margin-bottom: 20px;
-  height: 20%;
+  height: 35px;
+  color: #58387a;
+  cursor: none;
+  padding: 10px;
+}
+.co-section .contact-form label {
+  margin-right: 10%;
+  margin-left: 10%;
   color: #58387a;
   cursor: none;
 }
@@ -2741,42 +2742,35 @@ header .header_text {
 }
 
 .co-section .contact-form_name {
-  position: absolute;
-  top: 15%;
-  width: 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
+  top: 0%;
 }
 
 .co-section .contact-form_email {
-  position: absolute;
-  top: 25%;
-  width: 100%;
-  margin-bottom: 20px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
+  top: 10%;
 }
 
 .co-section .contact-form_message {
-  position: absolute;
-  bottom: 80px;
-  top: 40%;
-  width: 80%;
-  left: 10%;
-  right: 10%;
+  width: 100%;
+  padding: 0 45px;
+}
+.co-section .contact-form_message label{
+  margin-right: 5%;
+  margin-left: 0%;
+  color: #58387a;
+  cursor: none;
 }
 
 .co-section .contact-form_message textarea {
   border: 3px solid #58387a;
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   cursor: none;
   background: transparent;
   resize: none;
   padding: 10px;
   color: #58387a;
+  border-radius: 5px;
+
 }
 
 @media (max-width: 767px) {
