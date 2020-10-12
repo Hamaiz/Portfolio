@@ -1,57 +1,57 @@
 const router = require("express").Router()
-const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const sgMail = require("@sendgrid/mail")
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const { check, validationResult } = require("express-validator")
-
 
 //GET
 router.get("/", (req, res) => {
-    const name = ""
-    const email = ""
-    const message = ""
+  const name = ""
+  const email = ""
+  const message = ""
 
-    res.render("contact/index", {
-        title: "Contact",
-        textColor: "header_color_1",
-        mainStyle: "main_three",
-        pageName: "contact",
-        name,
-        email,
-        message
-    })
+  res.render("contact/index", {
+    title: "Contact",
+    textColor: "header_color_1",
+    mainStyle: "main_three",
+    pageName: "contact",
+    name,
+    email,
+    message,
+  })
 })
 
 //POST
-router.post("/", [
+router.post(
+  "/",
+  [
     check("name", "Please write your name").notEmpty(),
     check("email", "Please write an Email").isEmail(),
-    check("message", "Message is required").notEmpty()
-], (req, res) => {
+    check("message", "Message is required").notEmpty(),
+  ],
+  (req, res) => {
     const { name, email, message } = req.body
 
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
+      let errorsArray = []
 
-        let errorsArray = []
+      errors.errors.forEach((element) => {
+        errorsArray.push({ msg: element.msg })
+      })
 
-        errors.errors.forEach(element => {
-            errorsArray.push({ msg: element.msg })
-        });
-
-        res.render("contact/index", {
-            title: "Contact",
-            textColor: "header_color_1",
-            mainStyle: "main_three",
-            pageName: "contact",
-            errors: errorsArray,
-            name,
-            email,
-            message
-        })
-
+      res.render("contact/index", {
+        title: "Contact",
+        textColor: "header_color_1",
+        mainStyle: "main_three",
+        pageName: "contact",
+        errors: errorsArray,
+        name,
+        email,
+        message,
+      })
     } else {
-        const output = `
+      const output = `
                 <table width="100%" border="0" cellspacing="0" cellpadding="0"
             style="width:100%!important;line-height: 1.4;color: #00394d;">
             <tr>
@@ -89,63 +89,71 @@ router.post("/", [
         </table>
         `
 
-        // let transporter = nodemailer.createTransport({
-        //     host: "smtp.sendgrid.net",
-        //     port: 587,
-        //     authent,
+      // let transporter = nodemailer.createTransport({
+      //     host: "smtp.sendgrid.net",
+      //     port: 587,
+      //     authent,
 
-        //     auth: {
-        //         user: process.env.GM_EMAIL,
-        //         pass: process.env.GM_PASSWORD
-        //     }
-        // });
+      //     auth: {
+      //         user: process.env.GM_EMAIL,
+      //         pass: process.env.GM_PASSWORD
+      //     }
+      // });
 
-        // let mailOption = {
-        //     from: `"Portfolio" <${process.env.GM_EMAIL}>`,
-        //     to: process.env.GM_EMAIL,
-        //     subject: "Portfolio Contact",
-        //     html: output
-        // }
-        // transporter.sendMail(mailOption, (error, info) => {
-        //     if (error) {
-        //         console.log(error)
-        //         req.flash("error_msg", "There was a problem while sending email")
-        //         res.redirect("/contact")
-        //     } else {
-        //         req.flash("success_msg", "Your message has been sent. I'll contact you shortly")
-        //         res.redirect("/contact")
-        //     }
-        // })
+      // let mailOption = {
+      //     from: `"Portfolio" <${process.env.GM_EMAIL}>`,
+      //     to: process.env.GM_EMAIL,
+      //     subject: "Portfolio Contact",
+      //     html: output
+      // }
+      // transporter.sendMail(mailOption, (error, info) => {
+      //     if (error) {
+      //         console.log(error)
+      //         req.flash("error_msg", "There was a problem while sending email")
+      //         res.redirect("/contact")
+      //     } else {
+      //         req.flash("success_msg", "Your message has been sent. I'll contact you shortly")
+      //         res.redirect("/contact")
+      //     }
+      // })
 
-
-        const msg = {
-            to: process.env.GM_EMAIL,
-            from: `Portfolio <${process.env.GM_SEND_MAIL}>`,
-            subject: "Contact Portfolio",
-            html: output
+      const msg = {
+        to: process.env.GM_EMAIL,
+        from: `Portfolio <${process.env.GM_SEND_MAIL}>`,
+        subject: "Contact Portfolio",
+        html: output,
+      }
+      sgMail.send(msg).then(
+        () => {
+          req.flash(
+            "success_msg",
+            "Your message has been send. I'll contact you shortly"
+          )
+          res.redirect("/contact")
+        },
+        (error) => {
+          console.log(error)
+          if (error.response) {
+            const errorMessages = [
+              {
+                msg: "There was an error sending the message. Please try again",
+              },
+            ]
+            res.render("contact/index", {
+              title: "Contact",
+              textColor: "header_color_2",
+              mainStyle: "main_three",
+              pageName: "contact",
+              errors: errorMessages,
+              name,
+              email,
+              message,
+            })
+          }
         }
-        sgMail
-            .send(msg)
-            .then(() => {
-                req.flash("success_msg", "Your message has been send. I'll contact you shortly")
-                res.redirect('/contact');
-            }, error => {
-                console.log(error)
-                if (error.response) {
-                    const errorMessages = [{ msg: "There was an error sending the message. Please try again" }]
-                    res.render("contact/index", {
-                        title: "Contact",
-                        textColor: "header_color_2",
-                        mainStyle: "main_three",
-                        pageName: "contact",
-                        errors: errorMessages,
-                        name,
-                        email,
-                        message
-                    })
-                }
-            });
+      )
     }
-})
+  }
+)
 
 module.exports = router
