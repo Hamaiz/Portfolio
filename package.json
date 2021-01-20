@@ -22,7 +22,7 @@
     "express-flash": "0.0.2",
     "express-session": "^1.17.1",
     "express-validator": "^6.4.0",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "heroku-ssl-redirect": "0.0.4",
     "swiper": "^4.3.5"
   },
